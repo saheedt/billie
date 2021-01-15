@@ -1,0 +1,40 @@
+.error-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+	width: 40%;
+    margin: 10rem auto;
+	background-color: rgb(254, 241, 241);
+	border-color: rgb(226, 168, 167);
+	top: 3.1rem;
+    position: relative;
+    padding: 1rem 0;
+}
+.error-child-container {
+    width: 30%;
+    margin-top: auto;
+}
+
+#error-msg{
+	font-weight: bold;
+	color: rgb(213, 109, 109);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tablet Styles and some mobiles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    #error-msg {
+        min-height: 5rem;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    #error-msg {
+        min-height: 5rem;
+    }
+}
