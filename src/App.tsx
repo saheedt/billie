@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
+import Header from './components/Header';
 import CompanyList from './screens/CompanyList';
 
 import './App.css';
@@ -32,9 +33,9 @@ function App() {
   useEffect(() => {
     fetchCompanies();
   }, []);
-  
+
   return (
-    <div className="App">
+    <main className="App">
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -49,8 +50,9 @@ function App() {
           Learn React
         </a>
       </header> */}
+      <Header title="Billie" />
       <CompanyList companies={companies || []}/>
-    </div>
+    </main>
   );
 }
 

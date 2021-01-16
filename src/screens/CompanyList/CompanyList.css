@@ -1,0 +1,24 @@
+.company-list-container {
+  margin-top: 6rem;
+  width: 100%;
+  /* padding: 1rem; */
+}
+.company-list {
+  width: 100%;
+}
+
+.company-list__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  border-bottom: 1px solid grey;
+}
+.company-list__header--item {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}

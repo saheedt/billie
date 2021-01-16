@@ -18,6 +18,21 @@ class Helper {
     console.log("isValid: ", isValid);
     return isValid;
   };
+
+  static normalizeCurrency = (currency: string) => {
+    if (currency.includes(",")) {
+      let [base, fraction] = currency.split(",");
+      base = base.split(".").join("");
+      let format = Number(`${base}.${fraction}`);
+      format = Number(format.toFixed(4));
+      console.log("format[with ,]: ", format);
+      return format;
+    }
+    let format = Number(currency.split(".").join(""));
+    format = Number(format.toFixed(4));
+    console.log("format[without ,]: ", format);
+    return format;
+  };
 }
 
 export default Helper;

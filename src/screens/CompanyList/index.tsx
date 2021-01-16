@@ -20,19 +20,30 @@ const CompanyList: React.FC<Props> = ({ companies }) => {
             companies.map((company) => (
                 <CompanyDetails
                     key={`${company.id}__${company.name}`}
+                    id={company.id}
                     name={company.name}
                     budget={company.budget}
                     budgetSpent={company.budget_spent}
-                    dateOfFirstPurchase={company.date_of_first_purchase} />
+                    dateOfFirstPurchase={company.date_of_first_purchase}
+                />
             ))
             :
             <h2>No company to showcase</h2>
     }
     return (
-        <ul>
-            {renderCompanies()}
-        </ul>
-    )
+        <section className="company-list-container">
+            <ul className="company-list">
+                <li className="company-list__header">
+                    <div className="company-list__header--item">Company Name</div>
+                    <div className="company-list__header--item">Budget</div>
+                    <div className="company-list__header--item">Budget Spent</div>
+                    <div className="company-list__header--item">Budget Left</div>
+                    <div className="company-list__header--item">Date Of First Purchase</div>
+                </li>
+                {renderCompanies()}
+            </ul>
+        </section>
+    );
 }
 
 export default CompanyList;
