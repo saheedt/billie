@@ -44,17 +44,20 @@ const BudgetEdit: React.FC<Props> = ({ id, name, budget, budgetSpent, updateBudg
                     id,
                     budget: normalizeCurrency(activeBudget)
                 });
-                closeModel && closeModel();
+                setTimeout(()=>{ closeModel && closeModel(); }, 2000)
+                
             }}>
                 <div className="budget-edit__form-item">
                     <label htmlFor="name">Company Name</label>
                     <input type='text' id="name" value={name} readOnly />
                 </div>
                 <div className="budget-edit__form-item">
-                    <label htmlFor="currency">Budget</label>
-                    <input type='currency' id="currency" value={activeBudget} onChange={handleBudgetChange} />
-                    <label htmlFor="currency">New budget should be greater than or equal to spent budget</label>
-                    {!isValidBudget && <label className="budget-edit__error-label" htmlFor="currency">Valid currency format: (1.234,56)</label>}
+                    <label id="budget-label">Budget</label>
+                    <input type='currency' id="currency" data-testid="currency" aria-labelledby={(() =>
+                        !isValidBudget ? 'budget-label budget-info-label budget-error-label' : 'budget-label budget-info-label')()}
+                        value={activeBudget} onChange={handleBudgetChange} />
+                    <label id="budget-info-label">New budget should be greater than or equal to spent budget</label>
+                    {!isValidBudget && <label className="budget-edit__error-label" id="budget-error-label">Valid currency format: (1.234,56)</label>}
                 </div>
                 <div className="budget-edit__form-item">
                     <Button title="Complete" extraStyle={{ height: '60%' }} disabled={!isValidBudget}/>

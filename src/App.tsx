@@ -1,7 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import Notifications from 'react-notify-toast';
 import Header from './components/Header';
 import CompanyList from './screens/CompanyList';
+import Error from './components/Error';
+import Button from './components/Button';
+import Loader from './components/Loader';
 
 import './App.css';
 import { request } from './utils';
@@ -21,35 +24,45 @@ interface requestError {
 function App() {
   const [companies, setCompanies] = useState<Companies[] | undefined>(undefined);
   const [error, setError] = useState<requestError | undefined>(undefined);
+  const [loading, setLoading] = useState(true);
+  const url = './data/companies.json';
 
-  const fetchCompanies = async () => {
-    const [companies, error] = await request({ url: './data/companies.json', method: 'GET' });
-    error && setError(error)
-    companies && setCompanies(companies);
+  const fetchCompanies = async (url: string) => {
+    try {
+      const [companies, error] = await request({ url, method: 'GET' });
+      error && setError(error);
+      companies && setCompanies(companies);
+      setLoading(false);
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+    }
+  }
+
+  const retry = () => {
+    setLoading(true);
+    setError(undefined);
+    fetchCompanies(url);
   }
 
   useEffect(() => {
-    fetchCompanies();
+    fetchCompanies(url);
   }, []);
 
   return (
     <main className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
       <Header title="Billie" />
-      <CompanyList companies={companies || []}/>
+      {error ?
+        <Error message="Error Fetching companies.">
+          <Button title="Retry" extraStyle={{ height: '50px', backgroundColor: '#ffffff' }} clickHandler={retry} />
+        </Error>
+        :
+        loading ?
+            <Loader />
+          :
+            <CompanyList companies={companies || []} retry={retry} />
+      }
+      <Notifications options={{zIndex: 2000, top: '5rem'}}/>
     </main>
   );
 }

@@ -10,4 +10,45 @@
 "budget": 1123.2200,
 "budget_spent": 451.3754,
 "date_of_first_purchase": "2120-01-14"
+},
+{
+"id": 3,
+"name": "Acme Book",
+"budget": 4123.2200,
+"budget_spent": 1451.3754,
+"date_of_first_purchase": "2120-05-24"
+},
+{
+"id": 4,
+"name": "Didi Brooke",
+"budget": 454123.2200,
+"budget_spent": 14451.7354,
+"date_of_first_purchase": "2120-12-04"
+},
+{
+"id": 5,
+"name": "Mark Doe",
+"budget": 20000.0000,
+"budget_spent": 8500.0000,
+"date_of_first_purchase": "2119-07-17"
+}, {
+"id": 6,
+"name": "Jane Firma",
+"budget": 2223.2200,
+"budget_spent": 951.3754,
+"date_of_first_purchase": "2120-11-14"
+},
+{
+"id": 7,
+"name": "John Agnes",
+"budget": 5003.2200,
+"budget_spent": 2051.3754,
+"date_of_first_purchase": "2120-08-24"
+},
+{
+"id": 8,
+"name": "Tawakalt Love",
+"budget": 500123.2200,
+"budget_spent": 50450.7354,
+"date_of_first_purchase": "2120-04-04"
 }]

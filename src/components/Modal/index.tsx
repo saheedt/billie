@@ -9,7 +9,7 @@ interface Props {
 
 const Modal: React.FC<Props> = ({ children, closeModal }) => {
     return (
-        <section className="modal" aria-label="Modal">
+        <section id="modal" className="modal" tabIndex={-1}>
             <div className="modal__btn-container">
                 <Button title="close" clickHandler={closeModal} extraStyle={{width: '30%', maxWidth: '200px', height: '60%'}}/>
             </div>

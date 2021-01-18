@@ -1,9 +1,10 @@
 .company-details {
+    text-align: center;
     width: 100%;
     display: flex;
     align-items: center;
     height: 3rem;
-    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
 }
 
 .company-details__item {

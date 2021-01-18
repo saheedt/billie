@@ -1,0 +1,38 @@
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+	width: 40%;
+    margin: 10rem auto;
+    background-color: #fff;
+	top: 3.1rem;
+    position: relative;
+    padding: 1rem 0;
+}
+.not-found-child-container {
+    width: 30%;
+    margin-top: auto;
+}
+
+#not-found-msg{
+	font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tablet Styles and some mobiles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    #not-found-msg {
+        min-height: 5rem;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    #not-found-msg {
+        min-height: 5rem;
+    }
+}
