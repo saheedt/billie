@@ -24,8 +24,6 @@ function App() {
 
   const fetchCompanies = async () => {
     const [companies, error] = await request({ url: './data/companies.json', method: 'GET' });
-    console.log('companies: ', companies);
-    console.log('error: ', error);
     error && setError(error)
     companies && setCompanies(companies);
   }

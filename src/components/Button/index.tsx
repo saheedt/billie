@@ -6,19 +6,20 @@ interface Props {
     clickHandler?: (...args: any) => any;
     extraStyle?: { [key: string]: string };
     type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+    disabled?: boolean
 }
 
-const Button: React.FC<Props> = ({title, clickHandler, extraStyle, type}) => {
+const Button: React.FC<Props> = ({title, clickHandler, extraStyle, type, disabled}) => {
     return(
         clickHandler ?
             
-            <button className="button" onClick={clickHandler} style={extraStyle}>
+            <button className="button" onClick={clickHandler} style={extraStyle} disabled={disabled}>
                 {title}
             </button>
 
             :
 
-            <button className="button" type={type} style={extraStyle}>
+            <button className="button" type={type} style={extraStyle} disabled={disabled}>
                 {title}
             </button>
             

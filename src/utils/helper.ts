@@ -1,3 +1,10 @@
+export enum CurrencyCodes {
+  EUR = "€",
+  USD = "$",
+  GBP = "£",
+  NGN = "₦",
+}
+
 class Helper {
   static formatCurrency = (options: {
     amount: number;
@@ -15,7 +22,6 @@ class Helper {
   static isValidCurrencyInput = (currency: string) => {
     const pattern = /(?=.)^(([1-9][0-9]{0,2}(\.[0-9]{3})*)|[0-9]+)?(,[0-9]{1,2})?$/gm;
     const isValid = pattern.test(currency);
-    console.log("isValid: ", isValid);
     return isValid;
   };
 
@@ -25,13 +31,18 @@ class Helper {
       base = base.split(".").join("");
       let format = Number(`${base}.${fraction}`);
       format = Number(format.toFixed(4));
-      console.log("format[with ,]: ", format);
       return format;
     }
     let format = Number(currency.split(".").join(""));
     format = Number(format.toFixed(4));
-    console.log("format[without ,]: ", format);
     return format;
+  };
+
+  static stripCurrencySymbol = (
+    amount: string,
+    currencyCode: CurrencyCodes
+  ) => {
+    return amount.split(currencyCode).join("").trim();
   };
 }
 

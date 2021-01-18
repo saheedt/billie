@@ -1,0 +1,39 @@
+.budget-edit {
+  width: 80%;
+  max-width: 450px;
+  max-height: 450px;
+  /* height: 100%; */
+}
+.budget-edit__form {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 1rem;
+}
+.budget-edit__form-item {
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 0.5rem;
+  margin-top: 1rem;
+}
+
+.budget-edit__form-item label {
+  width: 100%;
+  padding: 0.1rem 0;
+}
+
+.budget-edit__form-item input {
+  width: 100%;
+  height: 60%;
+}
+
+.budget-edit__error-label {
+    color: rgb(213, 109, 109);
+    -webkit-font-smoothing: antialiased;
+}
+
+input {
+  padding: 0.5rem;
+}
