@@ -8,6 +8,13 @@ In the project directory, you can run:
 
 ### `npm start`
 
+Runs the app in production mode.\
+Open [http://localhost:9000](http://localhost:9000) to view it in the browser.
+
+The page will NOT reload if you make edits.
+
+### `npm start:dev`
+
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
