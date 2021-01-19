@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--billie-white);
   width: 50vw;
   height: 50vh;
 }

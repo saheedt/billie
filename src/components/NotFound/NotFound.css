@@ -5,7 +5,7 @@
     align-items: center;
 	width: 40%;
     margin: 10rem auto;
-    background-color: #fff;
+    background-color: var(--billie-white);
 	top: 3.1rem;
     position: relative;
     padding: 1rem 0;

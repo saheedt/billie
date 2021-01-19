@@ -2,12 +2,11 @@
   width: 80%;
   max-width: 450px;
   max-height: 450px;
-  /* height: 100%; */
 }
 .budget-edit__form {
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: var(--billie-white);
   padding: 1rem;
 }
 .budget-edit__form-item {
@@ -30,8 +29,11 @@
 }
 
 .budget-edit__error-label {
-    color: rgb(213, 109, 109);
-    -webkit-font-smoothing: antialiased;
+  color: var(--error-red);
+  -webkit-font-smoothing: antialiased;
+}
+#budget-info-label {
+  padding: 0.4rem 0;
 }
 
 input {

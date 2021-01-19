@@ -13,13 +13,13 @@ const Button: React.FC<Props> = ({title, clickHandler, extraStyle, type, disable
     return(
         clickHandler ?
             
-            <button className="button" onClick={clickHandler} style={extraStyle} disabled={disabled}>
+            <button className="button shadow" onClick={clickHandler} style={extraStyle} disabled={disabled}>
                 {title}
             </button>
 
             :
 
-            <button className="button" type={type} style={extraStyle} disabled={disabled}>
+            <button className="button shadow" type={type} style={extraStyle} disabled={disabled}>
                 {title}
             </button>
             

@@ -18,7 +18,7 @@
 
 #error-msg{
 	font-weight: bold;
-	color: rgb(213, 109, 109);
+	color: var(--error-red);
     -webkit-font-smoothing: antialiased;
     display: flex;
     justify-content: center;

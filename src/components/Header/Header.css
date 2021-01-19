@@ -3,9 +3,10 @@
   height: 5rem;
   display: flex;
   justify-content: center;
-  background-color: #e2f6f7;
+  background-color: var(--billie-grey);
   position: fixed;
   z-index: 2;
+  color: var(--billie-red);
 }
 
 .header-container {

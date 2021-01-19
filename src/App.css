@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --billie-red: #FF4338;
+  --error-red: rgb(213, 109, 109);
+  --billie-white: #fff;
+  --billie-grey: #F3F3F3
+}
 
 .App {
   /* height: 100vh; */
